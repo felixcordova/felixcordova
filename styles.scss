@@ -44,6 +44,7 @@ $margin-top2: 580px;
 $gap: 80px;
 $transform-origin: center top;
 $index: 10;
+
 @mixin body ($br, $dis) {
   background: $br ;
   display: $dis ;

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="fox" content="width=device-width, initial-scale=1.0">
+    <title>Aitana Mi Baby Shower</title>
+    <link rel="icon" href="imagenes/chupon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <div class="nube">
+           
+             <div class="nube1"><img src="imagenes/cloud-l.svg" alt=""></div>
+        
+             <div class="nube2"><img src="imagenes/cloud-l.svg" alt=""> </div>
+
+             <div class="nube3"><img src="imagenes/cloud-l.svg" alt=""></div>
+        
+             <div class="nube4"><img src="imagenes/cloud-l.svg" alt=""></div>
+        
+             <div class="nube5"><img src="imagenes/cloud-r.svg" alt=""></div>
+        
+             <div class="nube6"><img src="imagenes/cloud-l.svg" alt=""></div>
+        
+             <div class="nube7"><img src="imagenes/cloud-r.svg" alt=""></div>
+        
+             <div class="nube8"><img src="imagenes/cloud-l.svg" alt=""></div>  
+         
+             <div class="nube9"><img src="imagenes/cloud-l.svg" alt=""></div>
+         
+             <div class="nube10"><img src="imagenes/cloud-l.svg" alt=""></div>
+        
+             <div class="nube11"><img src="imagenes/cloud-l.svg" alt=""></div>
+        
+    </div>
+
+    
+
+    
+    <div class="contenedor">
+           
+        <div id="dashed">
+                  
+                  <h1> Mi baby Shower</h1>
+        
+                  <h2> Aitana Cataleya</h2>
+                
+                       <p> Está usted coordinalmente invitado a mi baby sohwer, dónde
+                           compartiremos  y  celebraremos  mi  futura,  llegada a este <br>mundo. 
+                       </p>
+
+                       <p> Se parte de este momento junto a mis papitos y seres queridos. <br>
+                           Te estaremos esperando con todo el cariño del mundo. Avisame si <br>
+                           vienes, para separarte con una galletita. <br> 
+                       </p>
+                       
+       
+            <div class="texto">          
+                      
+                    <div class="texto1">Te esperamos.</div>
+
+                    <div class="texto2"> ¿Cuando? </div>
+                       
+                    <div class="texto3"> Sabado 31 de julio del 2021 </div> 
+                       
+                    <div class="texto4"> ¿A que hora? </div>
+                      
+                    <div class="texto5"> 04:00 pm </div>
+                       
+                    <div class="texto6"> ¿Dónde? </div>
+                       
+                    <div class="texto7"> Pasaje Lisboa 103b, Hunter </div>
+       
+            </div> 
+
+
+        </div>
+
+    </div> 
+    
+    
+    <div class="imagen">
+            
+                       <img class="imagen1" src="imagenes/moon.svg">
+              
+                       <img class="imagen2" src="imagenes/bottle.svg">
+              
+                       <img class="imagen3" src="imagenes/pacifier.svg">
+              
+                       <img class="imagen4" src="imagenes/duck.svg">
+           
+    </div>
+
+
+    <div class="flores">
+                   
+       
+                          <img class="flores1" src="imagenes/pink-cloud.svg">
+       
+                             <button class="lightMode">Dia</button> 
+        
+        
+                          <img class="flores2" src="imagenes/pink-cloud.svg">
+        
+                              <button class="darkblue">Noche</button> 
+    
+    </div>
+      
+  
+     
+
+ <script>
+
+       const lightMode = document.querySelector('.lightMode');
+       const darkblue = document.querySelector('.darkblue');    
+       const body = document.querySelector('body');
+       lightMode.addEventListener('click', function() {
+        let val=body.classList.toggle("lightMode")
+
+}) 
+       darkblue.addEventListener('click', function() {
+       let val=body.classList.toggle("darkblue")
+ 
+       })
+ 
+        function load(){
+        const darkblue = localStorage.getItem('darkblue');
+        if(!darkblue){
+            store('true');
+        }else if(darkblue == 'true'){
+            body.classList.add('darkblue');
+
+        }
+      }
+
+        function store(value){
+        localStorage.setItem('lightMode', value);
+      }
+
+</script>
+          
+          
+</body>
+</html>

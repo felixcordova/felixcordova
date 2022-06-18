@@ -21,6 +21,7 @@ $top3: 20px;
 $font-1:"Marck Script",cursive;
 $font-2: "Josefin Slab",serif;
 $height: 30px;
+$height1: 1130px;
 $height-2: 18rem;
 $weight: inherit;
 $weight-2: 550;
@@ -95,7 +96,7 @@ body{
     background-color: $color-5;
     width: $width-3;
     top: $top2 - 600;
-    height: 1120px;
+    height: $height1;
     margin-left: 320px;
     margin-right: 320px;
     padding: $padding2;

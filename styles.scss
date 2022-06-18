@@ -71,10 +71,10 @@ $index: 10;
   align-items: $ali;
 }
 
-@mixin dashed ($cl, $bor, $mb, $wi, $box, $bor) {
+@mixin dashed ($cl, $b-w, $mb, $wi, $box, $bor) {
  
   color: $cl;
-  border-width: $bor;
+  border-width: $b-w;
   margin-bottom: $mb;
   width: $wi;
   box-sizing: $box ;
@@ -412,7 +412,7 @@ body{
 }
 
 .flores{
-  min-width: 100px;
+ 
    @include flores (auto, flex, fixed, space-between, $index);
    
     &1{

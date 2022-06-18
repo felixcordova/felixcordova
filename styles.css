@@ -239,7 +239,6 @@ p {
     animation: mov 16s linear infinite; }
 
 .flores {
-  min-width: 100px;
   margin-top: auto;
   display: flex;
   position: fixed;

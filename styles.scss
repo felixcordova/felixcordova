@@ -38,10 +38,13 @@ $left: 100px;
 $left1: - 60px;
 $left2: 1150px;
 $right: 100px;
+$margin-left: 320px;
+$margin-right: 320px;
 $margin-bottom: 50px;
 $margin-bottom2: 200px;
 $margin-top:-200px;
 $margin-top2: 580px;
+$b-w: 5px;
 $gap: 80px;
 $transform-origin: center top;
 $index: 10;
@@ -51,22 +54,37 @@ $index: 10;
   display: $dis ;
 }
 
-@mixin contenedor ($flex, $jus, $tex, $ali) {
+@mixin contenedor ($bk, $wd, $top, $hei, $ml, $mr, $pd, $ps, $dis ,$flex, $jus, $tex, $ali) {
+   
+  background-color:$bk;
+  width:$wd;
+  top:$top;
+  height: $hei;
+  margin-left:$ml;
+  margin-right: $mr;
+  padding: $pd;
+  position:$ps;
+  display: $dis;
   flex-direction: $flex;
   justify-content: $jus;
   text-align: $tex;
   align-items: $ali;
 }
 
-@mixin dashed ($box, $bor) {
+@mixin dashed ($cl, $bor, $mb, $wi, $box, $bor) {
+ 
+  color: $cl;
+  border-width: $bor;
+  margin-bottom: $mb;
+  width: $wi;
   box-sizing: $box ;
-    border-style: $bor ;
+  border-style: $bor ;
 }
 
 @mixin nubes ($fle, $pos, $box) {
   flex-wrap: $fle ;
-       position: $pos ;
-       box-sizing: $box ;
+  position: $pos ;
+  box-sizing: $box ;
 }
 
 @mixin flores ($mar, $dis, $pos, $jus, $z ) {
@@ -93,25 +111,14 @@ body{
 }      
   
 .contenedor{
-    background-color: $color-5;
-    width: $width-3;
-    top: $top2 - 600;
-    height: $height1;
-    margin-left: 320px;
-    margin-right: 320px;
-    padding: $padding2;
-    position:absolute;
-    display: $display;
-    @include contenedor (column, center, center, flex-start);
+    
+    @include contenedor ($color-5, $width-3,$top2 - 600, $height1, $margin-left, $margin-right, $padding2, absolute, block, column, center, center, flex-start);
     
   }
     
  #dashed{
-    color: $color-4;
-    border-width: 5px;
-    margin-bottom: $margin-bottom;
-    width: $width-3;
-    @include dashed (border-box, dashed);
+    
+    @include dashed ($color-4, $b-w, $margin-bottom, $width-3, border-box, dashed);
        
   }
   

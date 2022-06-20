@@ -8,7 +8,7 @@
     <link rel="icon" href="imagenes/chupon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="global"> 
    
     <div class="nube">
            
@@ -59,19 +59,19 @@
        
             <div class="texto">          
                       
-                    <div class="texto1">Te esperamos.</div>
+                   <div class="texto1">Te esperamos.</div>
 
-                    <div class="texto2"> ¿Cuando? </div>
+                   <div class="texto2"> ¿Cuando? </div>
                        
-                    <div class="texto3"> Sabado 31 de julio del 2021 </div> 
+                   <div class="texto3"> Sabado 31 de julio del 2021 </div> 
                        
-                    <div class="texto4"> ¿A que hora? </div>
+                   <div class="texto4"> ¿A que hora? </div>
                       
-                    <div class="texto5"> 04:00 pm </div>
+                   <div class="texto5"> 04:00 pm </div>
                        
-                    <div class="texto6"> ¿Dónde? </div>
+                   <div class="texto6"> ¿Dónde? </div>
                        
-                    <div class="texto7"> Pasaje Lisboa 103b, Hunter </div>
+                   <div class="texto7"> Pasaje Lisboa 103b, Hunter </div>
        
             </div> 
 
@@ -81,7 +81,7 @@
     </div> 
     
     
-    <div class="imagen">
+                <div class="imagen">
             
                        <img class="imagen1" src="imagenes/moon.svg">
               
@@ -91,53 +91,31 @@
               
                        <img class="imagen4" src="imagenes/duck.svg">
            
-    </div>
+                </div>
 
 
-    <div class="flores">
+                 <div class="flores">
                    
-       
                           <img class="flores1" src="imagenes/pink-cloud.svg">
-       
-                             <button class="lightMode">Dia</button> 
-        
-        
+                          <button type="button"class="lightMode" id="btn1" >Dia</button>
+                             
                           <img class="flores2" src="imagenes/pink-cloud.svg">
-        
-                              <button class="darkblue">Noche</button> 
-    
-    </div>
+                          <button type="button"class="darkblue" id="btn2" >Noche</button>
       
-  
-     
+                 </div>                
 
- <script>
 
-       const lightMode = document.querySelector('.lightMode');
-       const darkblue = document.querySelector('.darkblue');    
-       const body = document.querySelector('body');
-       lightMode.addEventListener('click', function() {
-        let val=body.classList.toggle("lightMode")
+<script>
 
-}) 
-       darkblue.addEventListener('click', function() {
-       let val=body.classList.toggle("darkblue")
- 
-       })
- 
-        function load(){
-        const darkblue = localStorage.getItem('darkblue');
-        if(!darkblue){
-            store('true');
-        }else if(darkblue == 'true'){
-            body.classList.add('darkblue');
-
-        }
-      }
-
-        function store(value){
-        localStorage.setItem('lightMode', value);
-      }
+      document.getElementById('btn1').addEventListener('click',function(){
+      body = document.getElementById('global');
+      body.style.background = 'rgba(59, 130, 246, 0.5)';
+      }) 
+      
+      document.getElementById('btn2').addEventListener('click',function(){
+        body = document.getElementById('global');
+        body.style.background =  'darkblue';
+      })
 
 </script>
           

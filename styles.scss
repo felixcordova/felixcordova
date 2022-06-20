@@ -107,8 +107,15 @@ $index: 10;
 
 body{
   @include body ($color-1, $display-2);
-  
-}      
+  #global{
+    .lightMode {
+      background-color:rgba(59,130,246,0.5);
+  }
+
+     .darkblue {
+       background-color:darkblue;}
+  }
+}    
   
 .contenedor{
     
@@ -457,9 +464,9 @@ body{
  
     }
 
-.darkblue {
+.darkblue{
         background-color: $color;
-        color: $color-6;
+        color:$color-6;
         font-size: $size - 40;
         font-family: "Marck Script",cursive;
         position: absolute;
@@ -471,13 +478,7 @@ body{
         z-index: $index;
        
     }
-}
+  }
 
-.darkblue {
-        background-color:darkblue;
-}
-.lightMode {
-        background-color:rgba(59,130,246,0.5);
-    
-}
+
 

@@ -6,17 +6,18 @@ $color-4:#61bad1;
 $color-5: #f1f2f2;
 $color-6: #fff;
 $size: 80px;
-$size2: 25px;
+$size1: 1.5rem;
+$size2: 2.25rem;
 $display: block;
 $display-2: flex;
 $position-1: relative;
 $position-2: absolute;
 $position-3: fixed;
-$width: 750px;
+$width: 9rem;
 $width-2: 280px;
 $width-3: 1000px;
 $top: -600px;
-$top2: 720px;
+$top2: 120px;
 $top3: 20px;
 $font-1:"Marck Script",cursive;
 $font-2: "Josefin Slab",serif;
@@ -24,16 +25,18 @@ $height: 30px;
 $height1: 1130px;
 $height-2: 18rem;
 $weight: inherit;
-$weight-2: 550;
+$weight-2: 540;
 $font-family: inherit;
 $line-height: inherit;
 $center: center;
 $bottom: -70px;
-$bottom2: -310px;
+$botton1: 24px;
 $margin2: -310;
 $margin: 10px;
-$padding: 8.4rem;
+$padding: 7.5rem;
 $padding2: 1.5rem;
+$p-top: 1.5rem;
+$p-botton: 1rem;
 $left: 100px;
 $left1: - 60px;
 $left2: 1150px;
@@ -41,11 +44,13 @@ $right: 100px;
 $margin-left: 320px;
 $margin-right: 320px;
 $margin-bottom: 50px;
-$margin-bottom2: 200px;
+$margin-bottom2: 180px;
 $margin-top:-200px;
-$margin-top2: 580px;
+$margin-top1: 580px;
+$margin-top2: 80px;
 $b-w: 5px;
 $gap: 80px;
+$opacy: 0.8;
 $transform-origin: center top;
 $index: 10;
 
@@ -54,12 +59,11 @@ $index: 10;
   display: $dis ;
 }
 
-@mixin contenedor ($bk, $wd, $top, $hei, $ml, $mr, $pd, $ps, $dis ,$flex, $jus, $tex, $ali) {
+@mixin contenedor ($bk, $wd, $top, $ml, $mr, $pd, $ps, $dis ,$flex, $jus, $tex, $ali) {
    
   background-color:$bk;
   width:$wd;
   top:$top;
-  height: $hei;
   margin-left:$ml;
   margin-right: $mr;
   padding: $pd;
@@ -71,24 +75,25 @@ $index: 10;
   align-items: $ali;
 }
 
-@mixin dashed ($cl, $b-w, $mb, $wi, $box, $bor) {
+@mixin dashed ($cl, $b-w, $wi, $box, $bor) {
  
   color: $cl;
   border-width: $b-w;
-  margin-bottom: $mb;
   width: $wi;
   box-sizing: $box ;
   border-style: $bor ;
 }
 
-@mixin nubes ($fle, $pos, $box) {
+@mixin nubes ($fle, $pos, $box, $opa) {
   flex-wrap: $fle ;
   position: $pos ;
   box-sizing: $box ;
+  opacity: $opa;
 }
 
-@mixin flores ($mar, $dis, $pos, $jus, $z ) {
-  margin-top:$mar;
+@mixin flores ($mar, $mar-top, $dis, $pos, $jus, $z ) {
+  margin-top:$mar; 
+  margin-top: $mar-top;
   display: $dis;
   position: $pos;
   justify-content:$jus;
@@ -119,54 +124,57 @@ body{
   
 .contenedor{
     
-    @include contenedor ($color-5, $width-3,$top2 - 600, $height1, $margin-left, $margin-right, $padding2, absolute, block, column, center, center, flex-start);
+    @include contenedor ($color-5, $width-3,$top2, $margin-left, $margin-right, $padding2, absolute, block, column, center, center, flex-start);
     
   }
     
  #dashed{
     
-    @include dashed ($color-4, $b-w, $margin-bottom, $width-3, border-box, dashed);
-       
+    @include dashed ($color-4, $b-w, $width-3, border-box, dashed);
+    
   }
   
    h1{
       color: $color-2;
-      margin-top: $margin-top + 180;
-      padding: $padding;
+      padding: $padding ;
+      margin: $margin - 10px;
       font-family: $font-1;
       font-weight: $weight;
       font-size: $size - 20;
-      margin-bottom: $margin-bottom + 30px;
+      margin-bottom: $margin-bottom - 250px;
      
     }
   
   h2{
       color: $color-3;
-      margin-top: $margin-top ;
-      margin-bottom: $margin-bottom;
+      margin-top: 60px;
+      margin-bottom: 60px;
       font-weight: $weight;
-      font-size: $size + 20 ;
+      font-size: $size + 16 ;
       font-family:$font-1;
     
     }
-   
+ 
    p{
       color: $color-4;
-      width: $width;
-      margin-left: $left;
+      width: 720px;
+      margin: $margin - 10;
+      margin-left: $left + 40;
+      padding-bottom: $p-botton;
       line-height: $height;
       font-weight: $weight-2;
-      font-size: $size2;
+      font-size: $size1;
       font-family: $font-2;
       
     }
-
+ 
  .texto{
      
      &1{
+      padding-top: $p-top;
        color: $color-4;
        margin-left: $left + 400;
-       font-size: $size2;
+       font-size: $size1;
        font-family: $font-2;
       
        }
@@ -174,7 +182,7 @@ body{
      &2{
        color: $color-3;
        margin: $margin;
-       font-size: $size2 + 15;
+       font-size: $size2;
        font-family:$font-1;
     
        } 
@@ -182,7 +190,8 @@ body{
      &3{
        color: $color-4;
        margin: $margin;
-       font-size: $size2;
+       margin-bottom: $botton1;
+       font-size: $size1;
        font-family: $font-2;
         
        }
@@ -190,7 +199,7 @@ body{
      &4{
        color: $color-2;
        margin: $margin;
-       font-size: $size2 + 15;
+       font-size: $size2;
        font-family:$font-1;
         
        }
@@ -198,25 +207,24 @@ body{
      &5{
        color: $color-4;
        margin: $margin;
-       font-size: $size2;
-       font-family: $font-2;
+       margin-bottom: $botton1 ;
+       font-size: $size1;
+       
     
        }
 
      &6{
        color: $color-3;
-       margin: $margin;
-       font-size: $size2 + 15;
+       font-size: $size2;
        font-family:$font-1;
         
        }
 
      &7{
         color: $color-4;
-        margin: $margin;
-        font-size: $size2;
         margin-bottom: $margin-bottom2;
-        font-family: $font-2;
+        font-size: $size1;
+        font-family:$font-2;
       
         }
     }
@@ -224,8 +232,8 @@ body{
 
 .nube{
     
-  @include nubes (wrap, $position-3, border-box);
-       
+  @include nubes (wrap, $position-3, border-box, $opacy);
+ 
        @keyframes movimiento {
         from {
             margin-left: -30%;
@@ -236,105 +244,95 @@ body{
     }  
     
    &1{    
-        width: $width - 580;
-        top: $top;
+        width: $width;
+        top: $top - 30;
         font-size: $size + 720;
         position: $position-3;
-        animation: movimiento 14s infinite; 
-    
+        animation: movimiento 10s linear infinite; 
+       
      }
 
    &2{
-        width: $width - 450;
-        top: $top + 100;
+        width: $width + 9;
+        top: $top + 120;
         font-size: $size + 720;
         position: $position-3;
-        animation: movimiento 49s infinite; 
+        animation: movimiento 20s linear infinite; 
     
      }
 
    &3{
-        width: $width - 550;
+        width: $width;
         top: $top + 150;
         font-size: $size + 720;
         position: $position-3;
-        animation: movimiento 18s infinite;  
+        animation: movimiento 15s linear infinite;  
     
      } 
 
    &4{
-        width: $width - 560;
+        width: $width + 9;
         top: $top + 200;
-        font-size: $size + 720;
+        font-size: $size + 1020;
         position: $position-3;
-        animation: movimiento 16s infinite; 
+        animation: movimiento 30s linear infinite; 
     
      }
     
    &5{
-        width: $width - 450;
+        width: $width;
         top: $top + 300;
         font-size: $size + 720;
         position: $position-3;
-        animation: movimiento 40s infinite;  
+        animation: movimiento 12s linear infinite;  
     
      }
 
   &6{
-        width: $width - 450;
+        width: $width + 9;
         top: $top + 250;
-        font-size: $size + 820;
+        font-size: $size + 1420;
         position: $position-3;
-        animation: movimiento 50s infinite; 
+        animation: movimiento 24s linear infinite; 
     
     }
 
   &7{
-        width: $width - 560;
-        top: $top + 400;
+        width: $width - 3;
+        top: $top + 800;
         font-size: $size + 720;
         position: $position-3;
-        animation: movimiento 13s infinite; 
+        animation: movimiento 50s linear infinite; 
     
     }
 
    &8{
-        width: $width - 560;
-        top: $top + 700;
+        width: $width;
+        top: $top  700;
         font-size: $size + 720;
         position: $position-3;
-        animation: movimiento 15s infinite;  
+        animation: movimiento 32s linear infinite;  
     
      }
 
    &9{
-        width: $width - 550;
+        width: $width + 14;
         top: $top + 500;
-        font-size: $size + 620;
+        font-size: $size + 920;
         position: $position-3;
-        animation: movimiento 60s infinite; 
+        animation: movimiento 20s linear infinite; 
 
      }
 
   &10{
-        width: $width - 450;
+        width: $width - 2;
         top: $top + 700;
-        font-size: $size + 720;
+        font-size: $size + 1120;
         position: $position-3;
-        animation: movimiento 30s infinite; 
+        animation: movimiento 56s linear infinite; 
     
      }
 
-  &11{
-        width: $width - 250;
-        top: $top + 300;
-        font-size: $size + 920;
-        position: $position-3;
-        animation: movimiento 65s infinite; 
-    
-     }
-
-    
 }
 
 .imagen{
@@ -420,13 +418,13 @@ body{
 
 .flores{
  
-   @include flores (auto, flex, fixed, space-between, $index);
-   
+   @include flores (auto, $margin-top1, flex, fixed, space-between, $index);
+  
     &1{
-        width: $width-2 +30;
+        width: $width-2 + 30;
         display: $display;
         margin-left: $left1;
-        margin-top: $margin-top2;
+        margin-bottom: $botton1 + 96;
         font-family: $font-family;
         line-height: $line-height;
         transform: rotate(52deg);
@@ -439,7 +437,6 @@ body{
         width: $width-2;
         display: $display;
         margin-left: $left2;
-        margin-top: $margin-top2 + 70;
         font-family: $font-family;
         line-height: $line-height;
         box-sizing: border-box;
@@ -461,7 +458,7 @@ body{
         cursor: pointer;
         left: $left - 20;
         z-index: $index;
- 
+        
     }
 
 .darkblue{
@@ -470,7 +467,7 @@ body{
         font-size: $size - 40;
         font-family: "Marck Script",cursive;
         position: absolute;
-        top: $top2 + 30;
+        top: $top2 + 50;
         border: 0 solid;
         transform: rotate(-35deg);
         cursor: pointer;
@@ -478,7 +475,7 @@ body{
         z-index: $index;
        
     }
-  }
+}
 
 
 

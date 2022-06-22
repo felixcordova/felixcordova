@@ -10,7 +10,6 @@ body {
   background-color: #f1f2f2;
   width: 1000px;
   top: 120px;
-  height: 1130px;
   margin-left: 320px;
   margin-right: 320px;
   padding: 1.5rem;
@@ -24,84 +23,86 @@ body {
 #dashed {
   color: #61bad1;
   border-width: 5px;
-  margin-bottom: 50px;
   width: 1000px;
   box-sizing: border-box;
   border-style: dashed; }
 
 h1 {
   color: #fca5a5;
-  margin-top: -20px;
-  padding: 8.4rem;
+  padding: 7.5rem;
+  margin: 0px;
   font-family: "Marck Script", cursive;
   font-weight: inherit;
   font-size: 60px;
-  margin-bottom: 80px; }
+  margin-bottom: -200px; }
 
 h2 {
   color: #a78bfa;
-  margin-top: -200px;
-  margin-bottom: 50px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   font-weight: inherit;
-  font-size: 100px;
+  font-size: 96px;
   font-family: "Marck Script", cursive; }
 
 p {
   color: #61bad1;
-  width: 750px;
-  margin-left: 100px;
+  width: 720px;
+  margin: 0px;
+  margin-left: 140px;
+  padding-bottom: 1rem;
   line-height: 30px;
-  font-weight: 550;
-  font-size: 25px;
+  font-weight: 540;
+  font-size: 1.5rem;
   font-family: "Josefin Slab", serif; }
 
 .texto1 {
+  padding-top: 1.5rem;
   color: #61bad1;
   margin-left: 500px;
-  font-size: 25px;
+  font-size: 1.5rem;
   font-family: "Josefin Slab", serif; }
 
 .texto2 {
   color: #a78bfa;
   margin: 10px;
-  font-size: 40px;
+  font-size: 2.25rem;
   font-family: "Marck Script", cursive; }
 
 .texto3 {
   color: #61bad1;
   margin: 10px;
-  font-size: 25px;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
   font-family: "Josefin Slab", serif; }
 
 .texto4 {
   color: #fca5a5;
   margin: 10px;
-  font-size: 40px;
+  font-size: 2.25rem;
   font-family: "Marck Script", cursive; }
 
 .texto5 {
   color: #61bad1;
   margin: 10px;
-  font-size: 25px;
-  font-family: "Josefin Slab", serif; }
+  margin-bottom: 24px;
+  font-size: 1.5rem; }
 
 .texto6 {
   color: #a78bfa;
-  margin: 10px;
-  font-size: 40px;
+  font-size: 2.25rem;
   font-family: "Marck Script", cursive; }
 
 .texto7 {
   color: #61bad1;
-  margin: 10px;
-  font-size: 25px;
-  margin-bottom: 200px;
+  margin-bottom: 180px;
+  font-size: 1.5rem;
   font-family: "Josefin Slab", serif; }
 
 .nube {
   flex-wrap: wrap;
   position: fixed;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  opacity: 0.8; }
 
 @keyframes movimiento {
   from {
@@ -109,71 +110,65 @@ p {
   to {
     margin-left: 100%; } }
   .nube1 {
-    width: 170px;
-    top: -600px;
+    width: 9rem;
+    top: -630px;
     font-size: 800px;
     position: fixed;
-    animation: movimiento 14s infinite; }
+    animation: movimiento 10s linear infinite; }
   .nube2 {
-    width: 300px;
-    top: -500px;
+    width: 18rem;
+    top: -480px;
     font-size: 800px;
     position: fixed;
-    animation: movimiento 49s infinite; }
+    animation: movimiento 20s linear infinite; }
   .nube3 {
-    width: 200px;
+    width: 9rem;
     top: -450px;
     font-size: 800px;
     position: fixed;
-    animation: movimiento 18s infinite; }
+    animation: movimiento 15s linear infinite; }
   .nube4 {
-    width: 190px;
+    width: 18rem;
     top: -400px;
-    font-size: 800px;
+    font-size: 1100px;
     position: fixed;
-    animation: movimiento 16s infinite; }
+    animation: movimiento 30s linear infinite; }
   .nube5 {
-    width: 300px;
+    width: 9rem;
     top: -300px;
     font-size: 800px;
     position: fixed;
-    animation: movimiento 40s infinite; }
+    animation: movimiento 12s linear infinite; }
   .nube6 {
-    width: 300px;
+    width: 18rem;
     top: -350px;
-    font-size: 900px;
+    font-size: 1500px;
     position: fixed;
-    animation: movimiento 50s infinite; }
+    animation: movimiento 24s linear infinite; }
   .nube7 {
-    width: 190px;
-    top: -200px;
+    width: 6rem;
+    top: 200px;
     font-size: 800px;
     position: fixed;
-    animation: movimiento 13s infinite; }
+    animation: movimiento 50s linear infinite; }
   .nube8 {
-    width: 190px;
-    top: 100px;
+    width: 9rem;
+    top: -600px 700;
     font-size: 800px;
     position: fixed;
-    animation: movimiento 15s infinite; }
+    animation: movimiento 32s linear infinite; }
   .nube9 {
-    width: 200px;
+    width: 23rem;
     top: -100px;
-    font-size: 700px;
-    position: fixed;
-    animation: movimiento 60s infinite; }
-  .nube10 {
-    width: 300px;
-    top: 100px;
-    font-size: 800px;
-    position: fixed;
-    animation: movimiento 30s infinite; }
-  .nube11 {
-    width: 500px;
-    top: -300px;
     font-size: 1000px;
     position: fixed;
-    animation: movimiento 65s infinite; }
+    animation: movimiento 20s linear infinite; }
+  .nube10 {
+    width: 7rem;
+    top: 100px;
+    font-size: 1200px;
+    position: fixed;
+    animation: movimiento 56s linear infinite; }
 
 .imagen {
   margin: 50px;
@@ -244,6 +239,7 @@ p {
 
 .flores {
   margin-top: auto;
+  margin-top: 580px;
   display: flex;
   position: fixed;
   justify-content: space-between;
@@ -252,7 +248,7 @@ p {
     width: 310px;
     display: block;
     margin-left: -60px;
-    margin-top: 580px;
+    margin-bottom: 120px;
     font-family: inherit;
     line-height: inherit;
     transform: rotate(52deg);
@@ -262,7 +258,6 @@ p {
     width: 280px;
     display: block;
     margin-left: 1150px;
-    margin-top: 650px;
     font-family: inherit;
     line-height: inherit;
     box-sizing: border-box;
@@ -273,7 +268,7 @@ p {
     font-size: 40px;
     font-family: "Marck Script",cursive;
     position: absolute;
-    top: 720px;
+    top: 120px;
     border: 0 solid;
     transform: rotate(35deg);
     cursor: pointer;
@@ -285,7 +280,7 @@ p {
     font-size: 40px;
     font-family: "Marck Script",cursive;
     position: absolute;
-    top: 750px;
+    top: 170px;
     border: 0 solid;
     transform: rotate(-35deg);
     cursor: pointer;

@@ -8,7 +8,7 @@ body {
 
 .contenedor {
   background-color: #f1f2f2;
-  width: 1000px;
+  width: 60%;
   top: 120px;
   margin-left: 320px;
   margin-right: 320px;
@@ -18,85 +18,73 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  align-items: flex-start; }
-
-#dashed {
-  color: #61bad1;
-  border-width: 5px;
-  width: 1000px;
-  box-sizing: border-box;
-  border-style: dashed; }
-
-h1 {
-  color: #fca5a5;
-  padding: 7.5rem;
-  margin: 0px;
-  font-family: "Marck Script", cursive;
-  font-weight: inherit;
-  font-size: 60px;
-  margin-bottom: -200px; }
-
-h2 {
-  color: #a78bfa;
-  margin-top: 60px;
-  margin-bottom: 60px;
-  font-weight: inherit;
-  font-size: 96px;
-  font-family: "Marck Script", cursive; }
-
-p {
-  color: #61bad1;
-  width: 720px;
-  margin: 0px;
-  margin-left: 140px;
-  padding-bottom: 1rem;
-  line-height: 30px;
-  font-weight: 540;
-  font-size: 1.5rem;
-  font-family: "Josefin Slab", serif; }
-
-.texto1 {
-  padding-top: 1.5rem;
-  color: #61bad1;
-  margin-left: 500px;
-  font-size: 1.5rem;
-  font-family: "Josefin Slab", serif; }
-
-.texto2 {
-  color: #a78bfa;
-  margin: 10px;
-  font-size: 2.25rem;
-  font-family: "Marck Script", cursive; }
-
-.texto3 {
-  color: #61bad1;
-  margin: 10px;
-  margin-bottom: 24px;
-  font-size: 1.5rem;
-  font-family: "Josefin Slab", serif; }
-
-.texto4 {
-  color: #fca5a5;
-  margin: 10px;
-  font-size: 2.25rem;
-  font-family: "Marck Script", cursive; }
-
-.texto5 {
-  color: #61bad1;
-  margin: 10px;
-  margin-bottom: 24px;
-  font-size: 1.5rem; }
-
-.texto6 {
-  color: #a78bfa;
-  font-size: 2.25rem;
-  font-family: "Marck Script", cursive; }
-
-.texto7 {
-  color: #61bad1;
-  margin-bottom: 180px;
-  font-size: 1.5rem;
-  font-family: "Josefin Slab", serif; }
+  align-items: flex-start;
+  box-sizing: border-box; }
+  .contenedor #dashed {
+    color: #61bad1;
+    border-width: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    border-style: dashed; }
+  .contenedor h1 {
+    color: #fca5a5;
+    padding: 7.5rem;
+    margin: 0px;
+    font-family: "Marck Script", cursive;
+    font-weight: inherit;
+    font-size: 60px;
+    margin-bottom: -200px; }
+  .contenedor h2 {
+    color: #a78bfa;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-weight: inherit;
+    font-size: 96px;
+    font-family: "Marck Script", cursive; }
+  .contenedor p {
+    color: #61bad1;
+    text-align: center;
+    padding-bottom: 1rem;
+    line-height: 30px;
+    font-weight: 540;
+    font-size: 1.5rem;
+    font-family: "Josefin Slab", serif; }
+  .contenedor .texto1 {
+    padding-top: 1.5rem;
+    color: #61bad1;
+    margin-left: 500px;
+    font-size: 1.5rem;
+    font-family: "Josefin Slab", serif; }
+  .contenedor .texto2 {
+    color: #a78bfa;
+    margin: 10px;
+    font-size: 2.25rem;
+    font-family: "Marck Script", cursive; }
+  .contenedor .texto3 {
+    color: #61bad1;
+    margin: 10px;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    font-family: "Josefin Slab", serif; }
+  .contenedor .texto4 {
+    color: #fca5a5;
+    margin: 10px;
+    font-size: 2.25rem;
+    font-family: "Marck Script", cursive; }
+  .contenedor .texto5 {
+    color: #61bad1;
+    margin: 10px;
+    margin-bottom: 24px;
+    font-size: 1.5rem; }
+  .contenedor .texto6 {
+    color: #a78bfa;
+    font-size: 2.25rem;
+    font-family: "Marck Script", cursive; }
+  .contenedor .texto7 {
+    color: #61bad1;
+    margin-bottom: 180px;
+    font-size: 1.5rem;
+    font-family: "Josefin Slab", serif; }
 
 .nube {
   flex-wrap: wrap;
@@ -177,7 +165,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px; }
+  gap: 80px;
+  box-sizing: border-box;
+  font-family: inherit;
+  line-height: inherit;
+  position: relative;
+  transform-origin: center top;
+  width: 70%; }
 
 @keyframes mov {
   0% {
@@ -193,47 +187,31 @@ p {
   .imagen1 {
     height: 18rem;
     margin: 20px;
-    position: relative;
     margin-left: 100px;
     bottom: -70px;
-    display: block;
-    font-family: inherit;
-    line-height: inherit;
     transform-origin: center top;
     animation: mov  13s linear infinite; }
   .imagen2 {
     height: 18rem;
     margin: 20px;
     top: 40px;
-    position: relative;
     margin-right: 100px;
     bottom: -80px;
-    display: block;
-    font-family: inherit;
-    line-height: inherit;
     transform-origin: center top;
     animation: mov 16s linear infinite; }
   .imagen3 {
     height: 18rem;
     margin: 20px;
     top: 20px;
-    position: relative;
     margin-left: 200px;
     bottom: -40px;
-    display: block;
-    font-family: inherit;
-    line-height: inherit;
     transform-origin: center top;
     animation: mov 13s linear infinite; }
   .imagen4 {
     height: 18rem;
     margin: 20px;
-    position: relative;
     margin-left: 100px;
     bottom: -50px;
-    display: block;
-    font-family: inherit;
-    line-height: inherit;
     transform-origin: center top;
     animation: mov 16s linear infinite; }
 
@@ -243,25 +221,22 @@ p {
   display: flex;
   position: fixed;
   justify-content: space-between;
-  z-index: 10; }
+  z-index: 10;
+  box-sizing: border-box; }
   .flores1 {
     width: 310px;
-    display: block;
     margin-left: -60px;
     margin-bottom: 120px;
     font-family: inherit;
     line-height: inherit;
     transform: rotate(52deg);
-    box-sizing: border-box;
-    z-index: 10; }
+    border: 0 solid; }
   .flores2 {
     width: 280px;
-    display: block;
     margin-left: 1150px;
     font-family: inherit;
     line-height: inherit;
-    box-sizing: border-box;
-    z-index: 10; }
+    border: 0 solid; }
   .flores .lightMode {
     background-color: transparent;
     color: #fff;
@@ -269,10 +244,10 @@ p {
     font-family: "Marck Script",cursive;
     position: absolute;
     top: 120px;
-    border: 0 solid;
     transform: rotate(35deg);
     cursor: pointer;
     left: 80px;
+    border: 0 solid;
     z-index: 10; }
   .flores .darkblue {
     background-color: transparent;
@@ -281,8 +256,16 @@ p {
     font-family: "Marck Script",cursive;
     position: absolute;
     top: 170px;
-    border: 0 solid;
     transform: rotate(-35deg);
     cursor: pointer;
     right: 100px;
+    border: 0 solid;
     z-index: 10; }
+
+@media screen and (min-width: 768px) {
+  .contenedor {
+    width: 60%; }
+  .dashed {
+    width: 60%; }
+  .imagen {
+    width: 70%; } }

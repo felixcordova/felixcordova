@@ -14,8 +14,9 @@ $position-1: relative;
 $position-2: absolute;
 $position-3: fixed;
 $width: 9rem;
+$width1:310px;
 $width-2: 280px;
-$width-3: 1000px;
+$width-3: 60%;
 $top: -600px;
 $top2: 120px;
 $top3: 20px;
@@ -59,7 +60,7 @@ $index: 10;
   display: $dis ;
 }
 
-@mixin contenedor ($bk, $wd, $top, $ml, $mr, $pd, $ps, $dis ,$flex, $jus, $tex, $ali) {
+@mixin contenedor ($bk, $wd, $top, $ml, $mr, $pd, $ps, $dis ,$flex, $jus, $tex, $ali, $box) {
    
   background-color:$bk;
   width:$wd;
@@ -73,6 +74,7 @@ $index: 10;
   justify-content: $jus;
   text-align: $tex;
   align-items: $ali;
+  box-sizing: $box;
 }
 
 @mixin dashed ($cl, $b-w, $wi, $box, $bor) {
@@ -82,25 +84,18 @@ $index: 10;
   width: $wi;
   box-sizing: $box ;
   border-style: $bor ;
+  
 }
 
-@mixin nubes ($fle, $pos, $box, $opa) {
+ @mixin nubes ($fle, $pos, $box, $opa) {
   flex-wrap: $fle ;
   position: $pos ;
   box-sizing: $box ;
   opacity: $opa;
+  
 }
 
-@mixin flores ($mar, $mar-top, $dis, $pos, $jus, $z ) {
-  margin-top:$mar; 
-  margin-top: $mar-top;
-  display: $dis;
-  position: $pos;
-  justify-content:$jus;
-  z-index: $z;
-}
-
-@mixin img ($mar, $mar-l, $hei, $dis, $jus, $ali, $gp) {
+ @mixin img ($mar, $mar-l, $hei, $dis, $jus, $ali, $gp, $box, $font-fa, $line, $pos, $transfor) {
   margin: $mar;
   margin-left: $mar-l;
   height: $hei ;
@@ -108,7 +103,26 @@ $index: 10;
   justify-content: $jus;
   align-items:  $ali;
   gap: $gp ;
+  box-sizing: $box;
+  font-family: $font-fa;
+  line-height: $line;
+  position: $pos; 
+  transform-origin: $transfor;
+}  
+  
+  @mixin flores ($mar, $mar-top, $dis, $pos, $jus, $z, $box) {
+  margin-top:$mar; 
+  margin-top: $mar-top;
+  display: $dis;
+  position: $pos;
+  justify-content:$jus;
+  z-index: $z;
+  box-sizing: $box;
+
 }
+
+
+
 
 body{
   @include body ($color-1, $display-2);
@@ -124,13 +138,13 @@ body{
   
 .contenedor{
     
-    @include contenedor ($color-5, $width-3,$top2, $margin-left, $margin-right, $padding2, absolute, block, column, center, center, flex-start);
+    @include contenedor ($color-5, $width-3,$top2, $margin-left, $margin-right, $padding2, absolute, block, column, center, center, flex-start, border-box );
     
-  }
+  
     
  #dashed{
     
-    @include dashed ($color-4, $b-w, $width-3, border-box, dashed);
+    @include dashed ($color-4, $b-w, $width-3 +40%, border-box, dashed);
     
   }
   
@@ -154,12 +168,10 @@ body{
       font-family:$font-1;
     
     }
- 
+  
    p{
       color: $color-4;
-      width: 720px;
-      margin: $margin - 10;
-      margin-left: $left + 40;
+      text-align: center;
       padding-bottom: $p-botton;
       line-height: $height;
       font-weight: $weight-2;
@@ -228,7 +240,7 @@ body{
       
         }
     }
-
+  }
 
 .nube{
     
@@ -337,8 +349,8 @@ body{
 
 .imagen{
  
- @include img ($margin + 40, $left + 100, $height, $display-2, center, center, $gap);
-       
+ @include img ($margin + 40, $left + 100, $height, $display-2, center, center, $gap, border-box, $font-family, $line-height, $position-1, $transform-origin);
+    width: 70%; 
         @keyframes mov {
         0% {transform: rotate(0deg);}
     
@@ -356,28 +368,21 @@ body{
     
         height: $height-2;
         margin: $margin + 10;
-        position: $position-1; 
         margin-left: $left;
         bottom: $bottom;
-        display: $display;
-        font-family: $font-family;
-        line-height: $line-height;
         transform-origin: $transform-origin;
         animation: mov  13s linear infinite;
- 
+        
      }
+       
 
    &2{
 
         height: $height-2;
         margin: $margin + 10;
         top: $top3 + 20;
-        position: $position-1;
         margin-right: $right;
         bottom: $bottom  - 10;
-        display: $display;
-        font-family: $font-family;
-        line-height: $line-height;
         transform-origin: $transform-origin;
         animation: mov 16s linear infinite;
 
@@ -388,12 +393,8 @@ body{
         height: $height-2;
         margin: $margin + 10;
         top: $top3;
-        position: $position-1;
         margin-left: $left + 100;
-        bottom: $bottom + 30; 
-        display: $display;
-        font-family: $font-family;
-        line-height: $line-height;
+        bottom: $bottom + 30;
         transform-origin: $transform-origin;
         animation: mov 13s linear infinite;
 
@@ -403,79 +404,86 @@ body{
 
         height: $height-2;
         margin: $margin + 10;
-        position: $position-1;
         margin-left: $left;
         bottom: $bottom + 20;
-        display: $display;
-        font-family: $font-family;
-        line-height: $line-height;
         transform-origin: $transform-origin;
         animation: mov 16s linear infinite;
     
      }
-
 }
+
 
 .flores{
  
-   @include flores (auto, $margin-top1, flex, fixed, space-between, $index);
+   @include flores (auto, $margin-top1, flex, fixed, space-between, $index, border-box);
   
     &1{
-        width: $width-2 + 30;
-        display: $display;
+        width: $width1;
         margin-left: $left1;
         margin-bottom: $botton1 + 96;
         font-family: $font-family;
         line-height: $line-height;
         transform: rotate(52deg);
-        box-sizing: border-box;
-        z-index: $index;
+        border: 0 solid;
+        
        
      }
     
    &2{
         width: $width-2;
-        display: $display;
         margin-left: $left2;
         font-family: $font-family;
         line-height: $line-height;
-        box-sizing: border-box;
-        z-index: $index;
-       
-     }
-   
+        border: 0 solid;
+      
     
+     }
+     
+     
 .lightMode{
     
-        background-color: $color;
-        color: $color-6;
-        font-size: $size - 40;
-        font-family: "Marck Script",cursive;
-        position: absolute;
-        top: $top2;
-        border: 0 solid;
-        transform: rotate(35deg);
-        cursor: pointer;
-        left: $left - 20;
-        z-index: $index;
-        
-    }
+      background-color: $color;
+      color: $color-6;
+      font-size: $size - 40;
+      font-family: "Marck Script",cursive;
+      position: absolute;
+      top: $top2;
+      transform: rotate(35deg);
+      cursor: pointer;
+      left: $left - 20;
+      border: 0 solid;
+      z-index: $index;
+      
+  }
 
 .darkblue{
-        background-color: $color;
-        color:$color-6;
-        font-size: $size - 40;
-        font-family: "Marck Script",cursive;
-        position: absolute;
-        top: $top2 + 50;
-        border: 0 solid;
-        transform: rotate(-35deg);
-        cursor: pointer;
-        right: $right;
-        z-index: $index;
-       
-    }
+      background-color: $color;
+      color:$color-6;
+      font-size: $size - 40;
+      font-family: "Marck Script",cursive;
+      position: absolute;
+      top: $top2 + 50;
+      transform: rotate(-35deg);
+      cursor: pointer;
+      right: $right;
+      border: 0 solid;
+      z-index: $index;
+     
+  }  
+    
 }
 
+@media screen and (min-width:768px) {
+  .contenedor{
+     width: 60%;
+  }
 
+      .dashed{
+       width: 60%;
+      }
+    
+      .imagen{
+        width: 70%;
+      }
+}
 
